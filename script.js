@@ -2,8 +2,6 @@ const apiWeather = "https://api.openweathermap.org/data/2.5/weather";
 const apiLocation = "http://api.openweathermap.org/geo/1.0/direct";
 const apiCountry = "https://restcountries.com/v3.1/";
 
-const apiKey = "631b42d3e508302042423318acbb2c34";
-
 const ciudad = document.getElementById("ciudad");
 const pais = document.getElementById("pais");
 const botonBusqueda = document.getElementById("botonBusqueda");
