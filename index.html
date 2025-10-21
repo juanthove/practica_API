@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Practica API</title>
 
     <link href="styles.css" rel="stylesheet">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <div id="contenedorPrincipal">
+        <h1>JAP Weather</h1>
+        <div id="buscadores">
+            <input type="text" id="ciudad" class="buscador" placeholder="Ciudad">
+            <input type="text" id="pais" class="buscador" placeholder="Pais">
+        </div>
+        <button id="botonBusqueda">Buscar</button>
+        <div id="resultado"></div>
+    </div>
 </body>
 </html>

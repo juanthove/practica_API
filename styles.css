@@ -1,0 +1,81 @@
+body{
+    background-color: rgb(226, 226, 226);
+}
+
+#contenedorPrincipal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#buscadores{
+    padding-bottom: 1em;
+}
+
+.buscador{
+    border-radius: 2em;
+    border: 0.1em solid;
+    padding-left: 0.7em;
+}
+
+.buscador:hover{
+    border-color: rgb(227, 255, 255);
+}
+
+#botonBusqueda{
+    border-radius: 0.7em;
+    border: none;
+    background-color: rgb(0, 204, 255);
+    width: 6em;
+    height: 2em
+}
+
+#botonBusqueda:hover{
+    background-color: rgb(3, 218, 189);
+}
+
+.contenedorClima{
+    margin: 0.5em;  
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.192);
+    padding: 0.6em;
+    background-color: white;
+}
+
+.contenedorClima:hover{
+    background-color: rgba(152, 239, 245, 0.377);
+}
+
+.contenedorNombreImagen{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nombreCiudad{
+    font-weight: bold;
+}
+
+.imagenClima{
+    width: 17%;
+    height: auto;
+}
+
+
+.contenedorTemperaturaDescripcion{
+    display: flex;
+    justify-content: space-between;
+}
+
+.temperaturaMin{
+    color:blue;
+}
+
+.temperaturaMax{
+    color:red;
+    margin-right: 3em;
+}
+
+
+.descripcionClima{
+    margin-right: 1em;
+}
+
