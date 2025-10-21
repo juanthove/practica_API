@@ -1,1 +1,0 @@
-const apiKey = "Coloque su Key de Open Weather";
