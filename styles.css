@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(226, 226, 226);
+    background-color: rgb(252, 252, 252);
 }
 
 #contenedorPrincipal{
@@ -19,7 +19,7 @@ body{
 }
 
 .buscador:hover{
-    border-color: rgb(227, 255, 255);
+    border-color: rgb(100, 136, 136);
 }
 
 #botonBusqueda{
@@ -34,48 +34,97 @@ body{
     background-color: rgb(3, 218, 189);
 }
 
+
+
+/*Tarjetas Clima*/
 .contenedorClima{
     margin: 0.5em;  
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.192);
     padding: 0.6em;
     background-color: white;
+    border-radius: 2em;
+    min-width: 25em;
+    margin-right: 1em;
 }
 
 .contenedorClima:hover{
     background-color: rgba(152, 239, 245, 0.377);
 }
 
-.contenedorNombreImagen{
+.contenedorNombre{
     display: flex;
     justify-content: space-between;
+    margin-left: 0.5em;
 }
 
 .nombreCiudad{
     font-weight: bold;
 }
 
-.imagenClima{
-    width: 17%;
-    height: auto;
+hr{
+    width: 100%;
+    margin: 0;
 }
 
-
-.contenedorTemperaturaDescripcion{
+.contenedorImagenTempDescripcion{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
-.temperaturaMin{
-    color:blue;
+.contenedorImagenTemp{
+    display: flex;
 }
 
-.temperaturaMax{
-    color:red;
-    margin-right: 3em;
+.imagenClima{
+    width: 35%;
+    height: auto;
+    
+}
+
+.contenedorTempSensacion{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 2.7em;
+}
+
+.temperatura{
+    font-size: 2em;
+    margin: 0;
+}
+
+.sensacion{
+    color: grey;
+    margin: 0;
 }
 
 
 .descripcionClima{
+    margin-top: 0;
+    padding-top: 0;
+    margin-left: 1em;
+}
+
+.contenedorHumedadViento{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0.5em;
+}
+
+.contenedorHumedad{
+    width: 42%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0.5em;
+}
+
+.contenedorViento{
+    display: flex;
+    justify-content: space-between;
+    width: 42%;
+}
+
+.viento{
     margin-right: 1em;
 }
 

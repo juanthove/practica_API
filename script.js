@@ -75,14 +75,26 @@ function insertarClima(clima, pais) {
     const divGeneral = document.createElement("div");
     divGeneral.classList.add("contenedorClima");
 
-    //Creo el div para el nombre e imagen
-    const divNombreImagen = document.createElement("div");
-    divNombreImagen.classList.add("contenedorNombreImagen");
+    //Creo el div para el nombre
+    const divNombre = document.createElement("div");
+    divNombre.classList.add("contenedorNombre");
 
     //Creo el nombre y pais de la ciudad
     const nombrePais = document.createElement("p");
     nombrePais.classList.add("nombreCiudad");
     nombrePais.textContent = `${clima.name}, ${pais}`;
+
+    //Creo el div para la imagen, temperatura y la descripcion
+    const divImagenTempDescripcion = document.createElement("div");
+    divImagenTempDescripcion.classList.add("contenedorImagenTempDescripcion");
+
+    //Creo el div general de la imagen y las temperaturas
+    const divImagenTemp = document.createElement("div");
+    divImagenTemp.classList.add("contenedorImagenTemp");
+
+    //Creo el div para temperatura y sensacion
+    const divTempSensacion = document.createElement("div");
+    divTempSensacion.classList.add("contenedorTempSensacion");
 
     //Creo la imagen y le doy clases
     const imagen = document.createElement("img");
@@ -90,37 +102,76 @@ function insertarClima(clima, pais) {
     imagen.src = `https://openweathermap.org/img/wn/${clima.weather[0].icon}@2x.png`;
     imagen.alt = clima.weather[0].description;
 
+    //Creo la temperatura
+    const temperatura = document.createElement("p");
+    temperatura.classList.add("temperatura");
+    temperatura.textContent = `${clima.main.temp} °C`;
 
-    //Creo el div para la temperatura y la descripción
-    const divTemperaturaDescripcion = document.createElement("div");
-    divTemperaturaDescripcion.classList.add("contenedorTemperaturaDescripcion");
+    //Creo sensacion termica
+    const sensacion = document.createElement("p");
+    sensacion.classList.add("sensacion");
+    sensacion.textContent = `Sensación termica: ${clima.main.feels_like} °C`;
 
-    //Creo la temperatura minima
-    const temperaturaMin = document.createElement("p");
-    temperaturaMin.classList.add("temperaturaMin");
-    temperaturaMin.textContent = `↓${clima.main.temp_min}°C`;
-
-    //Creo la temperatura maxima
-    const temperaturaMax = document.createElement("p");
-    temperaturaMax.classList.add("temperaturaMax");
-    temperaturaMax.textContent = `↑${clima.main.temp_max}°C`;
 
     //Creo la descripcion del clima
     const descripcion = document.createElement("p");
     descripcion.classList.add("descripcionClima");
     const descripcionClima = clima.weather[0].description;
     descripcion.textContent = descripcionClima.charAt(0).toUpperCase() + descripcionClima.slice(1);
-    
 
-    divNombreImagen.appendChild(nombrePais);
-    divNombreImagen.appendChild(imagen);
+    //Creo div para humedad y viento
+    const divHumedadViento = document.createElement("div");
+    divHumedadViento.classList.add("contenedorHumedadViento");
 
-    divTemperaturaDescripcion.appendChild(temperaturaMin);
-    divTemperaturaDescripcion.appendChild(temperaturaMax);
-    divTemperaturaDescripcion.appendChild(descripcion);
+    //Creo el div para la humedad
+    const divHumedad = document.createElement("div");
+    divHumedad.classList.add("contenedorHumedad");
 
-    divGeneral.appendChild(divNombreImagen);
-    divGeneral.appendChild(divTemperaturaDescripcion);
+    //Creo la humedad
+    const textoHumedad = document.createElement("p");
+    textoHumedad.textContent = "Humedad";
+
+    const humedad = document.createElement("p");
+    humedad.classList.add("humedad");
+    humedad.textContent = `💧${clima.main.humidity}%`;
+
+    //Creo el div para el viento
+    const divViento = document.createElement("div");
+    divViento.classList.add("contenedorViento");
+
+    //Creo el viento
+    const textoViento = document.createElement("p");
+    textoViento.textContent = "Viento";
+
+    const viento = document.createElement("p");
+    viento.classList.add("viento");
+    viento.textContent = `💨${(clima.wind.speed * 3.6).toFixed(1)} k/h`;
+
+    const hr = document.createElement("hr");
+
+
+    divNombre.appendChild(nombrePais);
+    divTempSensacion.appendChild(temperatura);
+    divTempSensacion.appendChild(sensacion);
+    divImagenTemp.appendChild(imagen);
+    divImagenTemp.appendChild(divTempSensacion);
+
+    divHumedad.appendChild(textoHumedad);
+    divHumedad.appendChild(humedad);
+
+    divViento.appendChild(textoViento);
+    divViento.appendChild(viento);
+
+    divHumedadViento.appendChild(divHumedad);
+    divHumedadViento.appendChild(divViento);
+
+    divImagenTempDescripcion.appendChild(divImagenTemp);
+    divImagenTempDescripcion.appendChild(descripcion);
+
+    divGeneral.appendChild(divNombre);
+    divGeneral.appendChild(hr);
+    divGeneral.appendChild(divImagenTempDescripcion);
+    divGeneral.appendChild(divHumedadViento);
 
     resultado.appendChild(divGeneral);
 }
